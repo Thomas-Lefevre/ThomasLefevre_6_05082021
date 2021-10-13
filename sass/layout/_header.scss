@@ -1,0 +1,29 @@
+header{
+    padding: 40px 0 40px 60px;
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    display: flex;
+    align-items: center;
+}
+ul{
+  display: flex;
+  justify-content: space-between;  
+}
+li{
+    font-size: 14px;
+    padding: 2px 5px;
+    color: $couleur-primaire-fonce;
+    list-style: none;
+    border: solid 1px $couleur-secondaire-police;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+.logo{
+    height: 50px;
+}
+img{
+    height: 100%;
+}

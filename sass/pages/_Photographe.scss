@@ -1,0 +1,68 @@
+.photographeHeader{
+    width: 100%;
+}
+.test{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.photographeInfo{
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    background-color: $couleur-secondaire-background;
+    &__divContact{
+        display: flex;
+        justify-content: space-between;
+        height: max-content;
+        width: 70%;
+    }
+    &__nom{
+        font-size: 3em;
+        color: $couleur-primaire-claire;
+        margin-bottom: 10px;
+    }
+    &__button{
+        padding: 10px;
+        color: white;
+        background-color: $couleur-primaire-fonce;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    &__localisation{
+        font-size: 1.5em;
+        color: $couleur-primaire-fonce ;
+        margin-bottom: 20px;
+    }
+    &__catchLine{
+        font-size: 1.2em;
+        color: $couleur-secondaire-police;
+        margin-bottom: 20px;
+    }
+    &__tagList{
+        width: max-content;
+    }
+    &__figure{
+        height: 200px;
+        width: 200px;
+    }
+    &__img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+.photographies{
+    width: 85%;
+    margin: 40px auto 0;
+}
+.trier{
+    width: 100%;
+    &__text{
+        font-weight: bold;
+        margin-right: 1%;
+    }    
+}
