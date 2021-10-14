@@ -188,13 +188,51 @@ h2 {
   width: 85%;
   margin: 40px auto 0;
 }
+.photographies__liste {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.photographies__card {
+  width: 26%;
+  margin: 0;
+  height: 40%;
+}
+.photographies__figure {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.photographies__img {
+  height: 85%;
+  width: 100%;
+  object-fit: cover;
+}
+.photographies__legende {
+  font-size: 1.5em;
+  color: #901C1C;
+  display: flex;
+  justify-content: space-between;
+}
 
 .trier {
   width: 100%;
+  margin-bottom: 40px;
 }
 .trier__text {
   font-weight: bold;
   margin-right: 1%;
+}
+.trier__select {
+  background-color: #901C1C;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  font-size: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
