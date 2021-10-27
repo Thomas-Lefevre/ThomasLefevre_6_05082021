@@ -9,6 +9,44 @@
     right: 0;
     top: 40px;
     height: 50px;
+    @media only screen and (max-width:979px) {
+        font-size: 1.2em;
+        width: 40%;
+        top: 30px;
+        right: 1em;
+    }
+    @media only screen and (min-width : 980px) and (max-width : 1160px){
+        width: 30%;
+        font-size: 1em;
+        top: 30px;
+    }
+}
+.lienContenu{
+    background-color: $couleur-primaire-claire;
+    color: black;
+    width: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    left: 45%;
+    transition: transform 0.3s;
+    transform: translateY(-300%);
+    @media only screen and (max-width: 730px){
+        left: 32%;
+    }
+    &:focus{
+        transform: translateY(5%);
+        position: sticky;
+        top: 5px;
+        z-index: 1;
+    }
+    &--scroll{
+        transform: translateY(5%);
+        position: sticky;
+        top: 5px;
+        z-index: 1; 
+        display: block;
+    }
 }
 section{
     width: 90%;
@@ -16,14 +54,14 @@ section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @media only screen and (max-width: 600px){
+    @media only screen and (max-width: 730px){
         width: 100%;
     }
 }
 article{
     width: 30%;
     margin: 30px 0;
-    @media only screen and (max-width: 600px){
+    @media only screen and (max-width: 730px){
         width: 100%;
         margin: 10px auto;
     }
@@ -41,34 +79,45 @@ article{
         height: 100%;
         width: 100%;
         object-fit: cover;
-        border-radius: 50%;
+        clip-path: circle(45%);
     }    
     &__catchLine{
+        color: black;
         text-align: center;
         margin: 10px;
         font-size: 12px;
     }    
     &__tarif{
-        color: $couleur-secondaire-police ;
+        color: $couleur-secondaire-fonce ;
         text-align: center;
         margin: 10px;
         font-size: 12px;
     }
-    @media only screen and (max-width: 600px){
+    &__tagList{
+        width: max-content;
+        margin: auto;
+    }
+    &__figure{
+        margin-bottom: 50px;
+        height: 250px;    
+    }
+    &__figcaption{
+        text-align: center;
+        font-size: 1.8em;
+        color: $couleur-primaire-claire;    
+    }
+    @media only screen and (max-width: 730px){
         width: 70%;
         margin: 10px auto;
     }
 }
-a{
-    text-decoration: none;
+.lienCard{
     color: $couleur-primaire-fonce;
-}
-.photographe__figure{
-    margin-bottom: 20px;
-    height: 250px;
-}
-h2{
-    text-align: center;
-    font-size: 2em;
+    display: block;
+    &:focus{
+        border: 2px solid $couleur-primaire-fonce;
+        border-radius: 20px;
+        padding: 10px;
+    }
 }
 

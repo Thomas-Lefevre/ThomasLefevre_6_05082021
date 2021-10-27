@@ -1,26 +1,38 @@
-.photographeHeader{
-    width: 100%;
-}
-.test{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
 .photographeInfo{
     width: 80%;
     margin: auto;
     padding: 30px;
-    background-color: $couleur-secondaire-background;
+    background-color: $couleur-secondaire-claire;
+    @media only screen and (max-width: 980px){
+        width: 90%;
+        padding: 0;
+        background-color: white;
+    }
+    &__div{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        @media only screen and (max-width: 980px){
+            width: 60%;
+        }    
+    }    
     &__divContact{
         display: flex;
         justify-content: space-between;
         height: max-content;
         width: 70%;
+        @media only screen and (max-width: 980px){
+            width: 100%;
+        }    
     }
     &__nom{
         font-size: 3em;
         color: $couleur-primaire-claire;
         margin-bottom: 10px;
+        @media only screen and (max-width: 980px){
+            font-size: 2em;
+            margin-bottom: 5px;
+        }    
     }
     &__button{
         padding: 10px;
@@ -30,29 +42,61 @@
         border-radius: 5px;
         font-size: 16px;
         font-weight: bold;
+        &:focus{
+            color: black;
+            background-color: $couleur-primaire-claire;
+        }
+        &:hover{
+            color: black;
+            background-color: $couleur-primaire-claire;
+        }
+        @media only screen and (max-width: 980px){
+            display: none;
+        }    
     }
     &__localisation{
         font-size: 1.5em;
         color: $couleur-primaire-fonce ;
         margin-bottom: 20px;
+        @media only screen and (max-width: 980px){
+            font-size: 1em;
+            margin-bottom: 10px;
+        }    
     }
     &__catchLine{
         font-size: 1.2em;
-        color: $couleur-secondaire-police;
+        color: $couleur-secondaire-fonce;
         margin-bottom: 20px;
+        @media only screen and (max-width: 980px){
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }    
     }
     &__tagList{
         width: max-content;
+        @media only screen and (max-width: 980px){
+            justify-content: space-evenly;
+        }    
+    }
+    &__tag{
+        @media only screen and (max-width: 980px){
+            font-size: 12px;
+            margin: 0 2px;
+        }    
     }
     &__figure{
         height: 200px;
         width: 200px;
+        @media only screen and (max-width: 980px){
+            height: 100px;
+            width: 100px;
+        }    
     }
     &__img{
         height: 100%;
         width: 100%;
         object-fit: cover;
-        border-radius: 50%;
+        clip-path: circle(50%);
     }
 }
 .photographies{
@@ -64,29 +108,50 @@
         flex-wrap: wrap;
         width: 100%;
     }
-    &__card{
-        width: 26%;
-        margin: 0;
-        height: 40%;
-    }
     &__figure{
-        height: 100%;
-        width: 100%;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        width: 33%;
+        margin: 0 0 30px 0;
+        @media only screen and (max-width: 980px){
+            width: 100%;
+            margin: 0;
+        }
+    }
+    &__card{
+        height: 20em;
+        width: 20em;
+        @media only screen and (max-width: 980px){
+            height: 15em;
+            width: 100%;
+        }
     }
     &__img{
-        height: 85%;
+        height: 90%;
         width: 100%;
         object-fit: cover;
+        border-radius: 5px;
+        @media only screen and (max-width: 980px){
+            object-position: 50% 20%;
+            height: 85%;
+        }
     }
     &__legende{
         font-size: 1.5em;
         color: $couleur-primaire-fonce;
         display: flex;
         justify-content: space-between;
+        @media only screen and (max-width: 980px){
+            font-size: 1.2em;
+        }
     }
+    &__likes{
+        display: flex;
+        align-items: center;
+    }
+}
+.fa-heart{
+    font-size: 1em;
 }
 .trier{
     width: 100%;
@@ -103,4 +168,109 @@
         padding: 10px;
         font-size: 1em;
     }  
+    @media only screen and (max-width: 980px){
+        display: none;
+    }
+}
+.aside{
+    position: sticky;
+    left: 85%;
+    bottom: 0;
+    background-color: $couleur-primaire-claire;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 11em;
+    &__likes{
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+    }
+    @media only screen and (max-width: 980px){
+        display: none;
+    }
+}
+.asideButton{
+    position: sticky;
+    bottom: 20px;
+    left: 30%;
+    background-color: $couleur-primaire-fonce;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    @media only screen and (min-width: 981px){
+        display: none;
+    }
+}
+.backgroundModal{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(104, 105, 112, 0.4);
+}
+.modalContact{
+    border-radius: 5px;
+    width: 30%;
+    margin: auto;
+    background-color: $couleur-primaire-claire;
+    position: relative;
+    @media only screen and (max-width: 980px){
+        width: 100%;
+        height: 100%;
+    }
+    &__titre{
+        font-size: 1.5em;
+        @media only screen and (max-width: 980px){
+            font-size: 1.2em;
+        }    
+    }
+    &__croix{
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        background-color: $couleur-primaire-claire;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        @media only screen and (max-width: 980px){
+            font-size: 1.2em;
+        }    
+    }
+    &__body{
+        padding: 15px 8%;
+        margin:  15% auto;
+        font-size: 2em;
+        @media only screen and (max-width: 980px){
+            margin: 0;
+        }    
+    }
+    &__input{
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+    }
+    &__message{
+        height: 120px;
+        @media only screen and (max-width: 980px){
+            height: 250px;
+        }    
+    }
+    &__buttonSubmit{
+        margin: 20px 0;
+        padding: 20px 40px;
+        color: white;
+        background-color: $couleur-primaire-fonce;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 }

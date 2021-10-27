@@ -21,19 +21,24 @@
 
     <main>
         <section class="photographeInfo">
-            <div class="test">
+            <div class="photographeInfo__div">
                 <div class="photographeInfo__divContact">
                     <h1 class="photographeInfo__nom">Mimi Keel</h1>
-                    <button class="photographeInfo__button">Contactez-moi</button>
+                    <button class="photographeInfo__button" aria-label="Contact Me"
+                        id="contactButton">Contactez-moi</button>
                 </div>
                 <div>
                     <p class="photographeInfo__localisation">London, UK</p>
                     <p class="photographeInfo__catchLine">Voir le beau dans le quotidien</p>
                     <ul class="photographeInfo__tagList">
-                        <li class="photographeTag"><a href="#">#portrait</a></li>
-                        <li class="photographeTag"><a href="#">#events</a></li>
-                        <li class="photographeTag"><a href="#">#travel</a></li>
-                        <li class="photographeTag"><a href="#">#animals</a></li>
+                        <li tabindex="0"><span aria-label="Trier les photographies via le tag Portrait">#Portrait</span>
+                        </li>
+                        <li tabindex="0"><span aria-label="Trier les photographes via le tag #Events">#Events</span>
+                        </li>
+                        <li tabindex="0"><span aria-label="Trier les photographes via le tag #Travel">#Travel</span>
+                        </li>
+                        <li tabindex="0"><span aria-label="Trier les photographes via le tag #Animals">#Animals</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -51,69 +56,124 @@
                 </select>
             </div>
             <div class="photographies__liste">
-                <article class="photographies__card">
-                    <figure class="photographies__figure">
+                <figure class="photographies__figure">
+                    <div class="photographies__card">
                         <img class="photographies__img" src="public/img/Mimi/Animals_Rainbow.jpg"
                             alt="Lilac breasted roller, closeup view">
                         <div class="photographies__legende">
                             <figcaption>Arc-en-cie</figcaption>
-                            <i class="fas fa-heart"></i>
+                            <div class="photographies__likes">
+                                <p>12</p>
+                                <i aria-label="likes" class="fas fa-heart"></i>
+                            </div>
                         </div>
-                    </figure>
-                </article>
-                <article class="photographies__card">
-                    <figure class="photographies__figure">
+                    </div>
+                </figure>
+                <figure class="photographies__figure">
+                    <div class="photographies__card">
                         <img class="photographies__img" src="public/img/Mimi/Animals_Rainbow.jpg"
                             alt="Lilac breasted roller, closeup view">
                         <div class="photographies__legende">
                             <figcaption>Arc-en-cie</figcaption>
-                            <i class="fas fa-heart"></i>
+                            <div class="photographies__likes">
+                                <p>12</p>
+                                <i aria-label="likes" class="fas fa-heart"></i>
+                            </div>
                         </div>
-                    </figure>
-                </article>
-                <article class="photographies__card">
-                    <figure class="photographies__figure">
+                    </div>
+                </figure>
+                <figure class="photographies__figure">
+                    <div class="photographies__card">
                         <img class="photographies__img" src="public/img/Mimi/Animals_Rainbow.jpg"
                             alt="Lilac breasted roller, closeup view">
                         <div class="photographies__legende">
                             <figcaption>Arc-en-cie</figcaption>
-                            <i class="fas fa-heart"></i>
+                            <div class="photographies__likes">
+                                <p>12</p>
+                                <i aria-label="likes" class="fas fa-heart"></i>
+                            </div>
                         </div>
-                    </figure>
-                </article>
-                <article class="photographies__card">
-                    <figure class="photographies__figure">
+                    </div>
+                </figure>
+                <figure class="photographies__figure">
+                    <div class="photographies__card">
                         <img class="photographies__img" src="public/img/Mimi/Animals_Rainbow.jpg"
                             alt="Lilac breasted roller, closeup view">
                         <div class="photographies__legende">
                             <figcaption>Arc-en-cie</figcaption>
-                            <i class="fas fa-heart"></i>
+                            <div class="photographies__likes">
+                                <p>12</p>
+                                <i aria-label="likes" class="fas fa-heart"></i>
+                            </div>
                         </div>
-                    </figure>
-                </article>
-                <article class="photographies__card">
-                    <figure class="photographies__figure">
+                    </div>
+                </figure>
+                <figure class="photographies__figure">
+                    <div class="photographies__card">
                         <img class="photographies__img" src="public/img/Mimi/Animals_Rainbow.jpg"
                             alt="Lilac breasted roller, closeup view">
                         <div class="photographies__legende">
                             <figcaption>Arc-en-cie</figcaption>
-                            <i class="fas fa-heart"></i>
+                            <div class="photographies__likes">
+                                <p>12</p>
+                                <i aria-label="likes" class="fas fa-heart"></i>
+                            </div>
                         </div>
-                    </figure>
-                </article>
-                <article class="photographies__card">
-                    <figure class="photographies__figure">
+                    </div>
+                </figure>
+                <figure class="photographies__figure">
+                    <div class="photographies__card">
                         <img class="photographies__img" src="public/img/Mimi/Animals_Rainbow.jpg"
                             alt="Lilac breasted roller, closeup view">
                         <div class="photographies__legende">
                             <figcaption>Arc-en-cie</figcaption>
-                            <i class="fas fa-heart"></i>
+                            <div class="photographies__likes">
+                                <p>12</p>
+                                <i aria-label="likes" class="fas fa-heart"></i>
+                            </div>
                         </div>
-                    </figure>
-                </article>
+                    </div>
+                </figure>
             </div>
         </section>
+        <aside class="aside">
+            <div class="aside__likes">
+                <p>297 081</p>
+                <i class="fas fa-heart"></i>
+            </div>
+            <p>400€ / jour</p>
+        </aside>
+        <button class="asideButton">Contactez-moi</button>
+        <div class="backgroundModal">
+            <div class="modalContact" aria-labelledby="contactTitre" role="contact">
+                <div class="modalContact__body">
+                    <h1 class="modalContact__titre" id="contactTitre">Contactez-moi <br> Mimi Keel</h1>
+                    <button class="modalContact__croix"><i class="fas fa-times"></i></button>
+                    <form action="photographe.html" method="post" name="contactPhotographe">
+                        <div class="modalContact__champ">
+                            <label class="labelForm" for="First name">Prénom</label><br>
+                            <input class="modalContact__input" type="text" name="First name" id="prenom" required="">
+                        </div>
+                        <div class="modalContact__champ">
+                            <label class="labelForm" for="Last name">Nom</label><br>
+                            <input class="modalContact__input" type="text" name="Last name" id="nom" required="">
+                        </div>
+                        <div class="modalContact__champ">
+                            <label class="labelForm" for="email">Email</label><br>
+                            <input class="modalContact__input" type="email" name="email" id="email" required="">
+                        </div>
+                        <div class="modalContact__champ">
+                            <label class="labelForm" for="Your message">Votre message</label><br>
+                            <input class="modalContact__input modalContact__message" type="text" name="Your message"
+                                id="message" required="">
+                        </div>
+                        <button type="submit" class="modalContact__buttonSubmit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
+    <script src="public/js/photographe.js"></script>
 </body>
 
 </html>
