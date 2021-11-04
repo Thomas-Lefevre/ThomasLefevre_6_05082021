@@ -1,5 +1,5 @@
 const listePhotographes = document.getElementById("listePhotographes");
-
+let filtreTag;
 // liste de filtre
 const portrait = document.getElementById("filtrePortrait");
 const art = document.getElementById("filtreArt");
@@ -10,26 +10,61 @@ const sport = document.getElementById("filtreSport");
 const animals = document.getElementById("filtreAnimals");
 const events = document.getElementById("filtreEvents");
 
-let filtreTag = "art";
+//évenement filtre
+portrait.addEventListener('click', () => {
+    tri("portrait");
+});
+art.addEventListener('click', () => {
+    tri("art");
+});
+fashion.addEventListener('click', () => {
+    tri("fashion");
+});
+travel.addEventListener('click', () => {
+    tri("travel");
+});
+sport.addEventListener('click', () => {
+    tri("sport");
+});
+animals.addEventListener('click', () => {
+    tri("animals");
+});
+events.addEventListener('click', () => {
+    tri("events");
+});
+architecture.addEventListener('click', () => {
+    tri("architecture");
+});
+
+function tri(e) {
+    filtreTag = e;
+    listePhotographes.innerHTML = "";
+    main();
+}
+
 
 function main() {
     fetch('FishEyeData.json')
         .then(res => res.json())
         .then(data => {
             data.photographers.forEach(photographe => {
-                insertionDonnees(photographe);
+                if (typeof filtreTag !== 'undefined') {
+                    let listeTags = photographe.tags;
+                    dataFilter = listeTags.filter(a => a == filtreTag)
+                    if (dataFilter.length == 0) {
+
+                    } else {
+                        insertionDonnees(photographe);
+                    }
+                } else {
+                    insertionDonnees(photographe);
+                }
             });
         })
 }
 
 function insertionDonnees(data) {
     let article = document.createElement('article');
-
-    //test filtre
-    let listeTags = data.tags;
-    dataFilter = listeTags.filter(a => a == filtreTag)
-    console.log(dataFilter);
-    //
 
     let photographeInfo =
         `
@@ -46,7 +81,7 @@ function insertionDonnees(data) {
                 <p class="photographe__tarif">${data.price}€/jour</p>
                 <ul class="photographe__tagList">`;
     data.tags.forEach(tag => {
-        photographeInfo += `<li class="photographe__tag"><span aria-label="${tag}">${tag}</span></li>`;
+        photographeInfo += `<li class="photographe__tag"><span aria-label="${tag}">#${tag}</span></li>`;
     });
     photographeInfo += `</ul></a>`;
     article.innerHTML = photographeInfo;
@@ -57,8 +92,8 @@ main();
 
 // détection et activation de l'élément lienContenu au scroll de la page
 const skipScroll = document.querySelector(".lienContenu")
-window.addEventListener('scroll', ()=>{
-    if(window.scrollY > 10){
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
         skipScroll.classList.add('lienContenu--scroll');
     } else {
         skipScroll.classList.remove('lienContenu--scroll');
