@@ -18,6 +18,12 @@ function mainInfo() {
                     insertionInfo(photographe);
                 }
             });
+            data.media.forEach(photographie => {
+                if (photographie.photographerId == photographeId) {
+                    insertionPhotographies(photographie);
+                }
+            });
+            // ajout fonction evenement 
         })
 }
 
@@ -52,18 +58,6 @@ function insertionInfo(data) {
 
 ////Photographies et vidéo du photographe
 
-function mainPhotographies() {
-    fetch('FishEyeData.json')
-        .then(res => res.json())
-        .then(data => {
-            data.media.forEach(photographie => {
-                if (photographie.photographerId == photographeId) {
-                    insertionPhotographies(photographie);
-                }
-            });
-        })
-}
-
 function insertionPhotographies(data) {
     let figure = document.createElement('figure');
     let media = `
@@ -92,13 +86,10 @@ function insertionPhotographies(data) {
     photographeLikes.innerHTML = `<p>${likesTotal}</p>`
 }
 
-mainPhotographies();
-
-
 //// Modal Contact 
 
 // Elements du DOM
-const modalButton = document.getElementById("contactButton");
+// const modalButton = document.getElementById("contactButton");
 const modalButtonMobile = document.querySelector(".asideButton");
 const modalBackground = document.querySelector(".backgroundModal");
 const modalCroix = document.querySelector(".modalContact__croix");
@@ -109,7 +100,7 @@ const email = document.getElementById("email");
 const message = document.getElementById("message");
 
 //evenement ouverture modal
-modalButton.addEventListener('click', ouvertureModal);
+// modalButton.addEventListener('click', ouvertureModal);
 modalButtonMobile.addEventListener('click', ouvertureModal);
 
 //evenement fermeture modal via click sur la croix
