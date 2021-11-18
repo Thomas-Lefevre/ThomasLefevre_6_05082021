@@ -1,11 +1,10 @@
 function photographerFactory(data) {
-    const { name, portrait, city, country, id, price, tags, tagline, alt } = data;
-
+    const { name, id, city, country, tags, tagline, price, portrait, alt } = data;
+    
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
         let article = document.createElement('article');
-
         let photographeInfo =
             `
                 <a class="photographe lienCard" href="photographe.html?id=${id}" aria-label="Aller sur la page de ${name}
@@ -54,8 +53,8 @@ function photographerFactory(data) {
         </figure>`;
         div.innerHTML = presentationPhotographe;
         photographePrix.innerHTML = `<p>${price}€ / jour</p>`
-        return(div);
+        return (div);
     }
 
-    return { name, picture, city, country, id, price, tags, tagline, alt, getUserCardDOM , getUserInfoDOM}
+    return { name, picture, city, country, id, price, tags, tagline, alt, getUserCardDOM, getUserInfoDOM }
 }

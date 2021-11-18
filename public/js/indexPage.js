@@ -94,50 +94,37 @@ function tri(e) {
 
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
-    const photographers = [
-        fetch('FishEyeData.json')
-            .then(res => res.json())
-            .then(data => {
-                data.photographers.forEach(photographe => {
-                    if (typeof filtreTag !== 'undefined') {
-                        let listeTags = photographe.tags;
-                        dataFilter = listeTags.filter(a => a == filtreTag)
-                        if (dataFilter.length == 0) {
+    const photographers = [];
+    fetch('FishEyeData.json')
+        .then(res => res.json())
+        .then(data => {
+            data.photographers.forEach(photographe => {
+                if (typeof filtreTag !== 'undefined') {
+                    let listeTags = photographe.tags;
+                    dataFilter = listeTags.filter(a => a == filtreTag)
+                    if (dataFilter.length == 0) {
 
-                        } else {
-                            displayData(photographers)
-                        }
                     } else {
-                        displayData(photographers)
+                        displayData(photographe);
                     }
-                });
-            })];
-    return ({
-        photographers: [...photographers, ...photographers, ...photographers]
-    })
-    // et bien retourner le tableau photographers seulement une fois
-}
-
-async function displayData(photographers) {
-    const listePhotographes = document.getElementById("listePhotographes");
-
-    photographers.forEach((photographer) => {
-        const photographerModel = photographerFactory(photographer);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        listePhotographes.appendChild(userCardDOM);
-    });
+                } else {
+                    displayData(photographe);
+                }
+            });
+        });
 };
 
-// async function init() {
-//     // Récupère les datas des photographes
-//     const { photographers } = await getPhotographers();
-//     displayData(photographers);
-// };
+async function displayData(photographe) {
+    const photographerModel = photographerFactory(photographe);
+    const userCardDOM = photographerModel.getUserCardDOM();
+    listePhotographes.appendChild(userCardDOM);
+};
 
 getPhotographers();
 
 
 ////
+
 // détection et activation de l'élément lienContenu au scroll de la page
 const skipScroll = document.querySelector(".lienContenu")
 window.addEventListener('scroll', () => {
