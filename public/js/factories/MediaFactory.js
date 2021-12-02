@@ -1,7 +1,5 @@
 function mediaFactory(data) {
-    const { title, image, price, date, id, photographerId, tags, likes, alt } = data;
-
-    const picture = `assets/photographers/${image}`;
+    const { id, photographerId, title, image, video, tags, likes, date, price, alt } = data;
 
     function getMediaCardDOM() {
         let figure = document.createElement('figure');
@@ -26,8 +24,12 @@ function mediaFactory(data) {
                             </div>
                         `
         figure.innerHTML = media;
-        figure.className = "photographies_figure";
+        // const likeTest = document.querySelectorAll("i.fa-heart");
+        // console.log(likeTest);
+        likesTotal += likes;
+        photographiesListe.appendChild(figure).className = "photographies__figure";
+        photographeLikes.innerHTML = `<p>${likesTotal}</p>`
         return (figure);
     }
-    return { title, image, price, date, id, photographerId, tags, likes, alt, getMediaCardDOM }
+    return { id, photographerId, title, image, video, tags, likes, date, price, alt, getMediaCardDOM }
 }

@@ -2,46 +2,55 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FishEye</title>
-    <link rel="stylesheet" href="public/css/style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FishEye</title>
+        <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body>
-    <a class="lienContenu" href="#listePhotographes" title="Passer au contenu">Passer au contenu</a>
-    <header>
-        <img class="logo" src="public/img/logo fisheye.png" alt="FishEye home page">
-        <nav aria-label="photographer categories">
-            <ul>
-                <li id="filtrePortrait" tabindex="0"><span
-                        aria-label="Trier les photographes via le tag Portrait">#Portrait</span></li>
-                <li id="filtreArt" tabindex="0"><span aria-label="Trier les photographes via le tag #Art">#Art</span>
-                </li>
-                <li id="filtreFashion" tabindex="0"><span aria-label="Trier les photographes via le tag #Fashion">
-                        #Fashion</span></li>
-                <li id="filtreArchitecture" tabindex="0"><span
-                        aria-label="Trier les photographes via le tag #Architecture">#Architecture</span></li>
-                <li id="filtreTravel" tabindex="0"><span
-                        aria-label="Trier les photographes via le tag #Travel">#Travel</span></li>
-                <li id="filtreSport" tabindex="0"><span
-                        aria-label="Trier les photographes via le tag #Sport">#Sport</span></li>
-                <li id="filtreAnimals" tabindex="0"><span
-                        aria-label="Trier les photographes via le tag #Animals">#Animals</span></li>
-                <li id="filtreEvents" tabindex="0"><span
-                        aria-label="Trier les photographes via le tag #Events">#Events</span></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1 class="mainTitre">Nos photographes</h1>
-        <section id="listePhotographes"></section>
-    </main>
-    <!-- Factories -->
-    <script src="public/js/factories/PhotographesFactory.js"></script>
-    <!-- Pages -->
-    <script src="public/js/indexPage.js"></script>
+        <a class="lienContenu" href="#listePhotographes" title="Passer au contenu">Passer au contenu</a>
+        <header>
+                <a href="index.html">
+                        <img class="logo" src="public/img/logo fisheye.png" alt="FishEye home page">
+                </a>
+                <nav aria-label="photographer categories">
+                        <ul>
+                                <li id="filtrePortrait" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag Portrait">#Portrait</span>
+                                </li>
+                                <li id="filtreArt" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag #Art">#Art</span>
+                                </li>
+                                <li id="filtreFashion" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag #Fashion">
+                                                #Fashion</span></li>
+                                <li id="filtreArchitecture" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag #Architecture">#Architecture</span>
+                                </li>
+                                <li id="filtreTravel" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag #Travel">#Travel</span>
+                                </li>
+                                <li id="filtreSport" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag #Sport">#Sport</span></li>
+                                <li id="filtreAnimals" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag #Animals">#Animals</span>
+                                </li>
+                                <li id="filtreEvents" tabindex="0"><span
+                                                aria-label="Trier les photographes via le tag #Events">#Events</span>
+                                </li>
+                        </ul>
+                </nav>
+        </header>
+        <main>
+                <h1 class="mainTitre">Nos photographes</h1>
+                <section id="listePhotographes"></section>
+        </main>
+        <!-- Factories -->
+        <script src="public/js/factories/PhotographesFactory.js"></script>
+        <!-- Pages -->
+        <script src="public/js/indexPage.js"></script>
 </body>
 
 </html>
