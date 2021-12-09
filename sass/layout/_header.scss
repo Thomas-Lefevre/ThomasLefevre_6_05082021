@@ -62,6 +62,11 @@ li{
     @media only screen and (min-width : 980px) and (max-width : 1160px){
         height: 2em;
     }
+    &:focus{
+        border: 2px solid $couleur-primaire-fonce;
+        border-radius: 20px;
+        padding: 10px;
+    }        
 }
 img{
     height: 100%;

@@ -32,7 +32,7 @@ function photographerFactory(data) {
         <div class="photographeInfo__div">
         <div class="photographeInfo__divContact">
             <h1 class="photographeInfo__nom">${name} </h1>
-            <button class="photographeInfo__button" aria-label="Contact Me"
+            <button class="photographeInfo__button" tabindex=3 aria-label="Contact Me"
                 id="contactButton">Contactez-moi</button>
         </div>
         <div>
@@ -40,7 +40,7 @@ function photographerFactory(data) {
             <p class="photographeInfo__catchLine">${tagline}</p>
             <ul class="photographeInfo__tagList">`
         tags.forEach(tag => {
-            presentationPhotographe += `<li tabindex="0" id="filtre${tag}"><span class="filtres" aria-label="Trier les photographies via le tag ${tag}">#${tag}</span>
+            presentationPhotographe += `<li tabindex="2" id="filtre${tag}"><span class="filtres" aria-label="Trier les photographies via le tag ${tag}">#${tag}</span>
                 </li>`;
         });
         presentationPhotographe += `
@@ -48,7 +48,7 @@ function photographerFactory(data) {
             </div>
         </div>
         <figure class="photographeInfo__figure">
-            <img class="photographeInfo__img" src="public/img/Photographers ID Photos/${portrait}" alt="">
+            <img class="photographeInfo__img" src="public/img/Photographers ID Photos/${portrait}" alt="Photographie de profil de ${name}">
         </figure>`;
         photographeInfo.innerHTML = presentationPhotographe;
         tags.forEach(tag => {
@@ -73,7 +73,7 @@ function photographerFactory(data) {
                 }
             });
         });
-        photographePrix.innerHTML = `<p>${price}€ / jour</p>`
+        photographePrix.innerHTML = `<p tabindex="7" aria-label="Tarif du photographe de ${price} par jour">${price}€ / jour</p>`
     }
 
     return { name, picture, city, country, id, price, tags, tagline, alt, getUserCardDOM, getUserInfoDOM }
