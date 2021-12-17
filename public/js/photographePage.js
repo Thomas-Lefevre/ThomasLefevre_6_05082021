@@ -18,7 +18,6 @@ function filtrePhotographie(e) {
 
 async function getInfoPhotographers() {
     photographiesListe.innerHTML = "";
-    // Penser à remplacer par les données récupérées dans le json
     fetch('FishEyeData.json')
         .then(res => res.json())
         .then(data => {
@@ -48,17 +47,15 @@ async function getInfoPhotographers() {
                         return b.likes - a.likes;
                     });
                     break;
-            };
+            }
             data.media.forEach(photographie => {
                 if (photographie.photographerId == photographeId) {
-                    // displayMedia(photographie);
                     if (filtreTag !== 'all') {
                         let listeTags = photographie.tags;
                         dataFilter = listeTags.filter(filtre => filtre == filtreTag)
-                        if (dataFilter.length == 0) {
-
-                        } else {
+                        if (dataFilter.length !== 0) {
                             displayMedia(photographie);
+
                         }
                     } else {
                         displayMedia(photographie);
@@ -68,17 +65,17 @@ async function getInfoPhotographers() {
             likeDislike();
             Lightbox.init();
         })
-};
+}
 
 async function displayInfo(photographe) {
     const photographerModel = photographerFactory(photographe);
     photographerModel.getUserInfoDOM();
-};
+}
 
 async function displayMedia(photographie) {
     const MediaModel = mediaFactory(photographie);
     MediaModel.getMediaCardDOM();
-};
+}
 
 getInfoPhotographers();
 

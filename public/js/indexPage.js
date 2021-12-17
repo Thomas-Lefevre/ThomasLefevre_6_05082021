@@ -89,8 +89,8 @@ function tagPortrait(){
         triPhotographe("all");
     } else {
         triPhotographe("portrait");
-    };
-};
+    }
+}
 
 function tagArt(){
     if(filtreTag === 'all'){
@@ -99,8 +99,8 @@ function tagArt(){
         triPhotographe("all");
     } else {
         triPhotographe("art");
-    };
-};
+    }
+}
 
 function tagFashion(){
     if(filtreTag === 'all'){
@@ -109,8 +109,8 @@ function tagFashion(){
         triPhotographe("all");
     } else {
         triPhotographe("fashion");
-    };
-};
+    }
+}
 
 function tagTravel(){
     if(filtreTag === 'all'){
@@ -119,8 +119,8 @@ function tagTravel(){
         triPhotographe("all");
     } else {
         triPhotographe("travel");
-    };
-};
+    }
+}
 
 function tagSport(){
     if(filtreTag === 'all'){
@@ -129,8 +129,8 @@ function tagSport(){
         triPhotographe("all");
     } else {
         triPhotographe("sport");
-    };
-};
+    }
+}
 
 function tagAnimals(){
     if(filtreTag === 'all'){
@@ -139,8 +139,8 @@ function tagAnimals(){
         triPhotographe("all");
     } else {
         triPhotographe("animals");
-    };
-};
+    }
+}
 
 function tagEvents(){
     if(filtreTag === 'all'){
@@ -149,8 +149,8 @@ function tagEvents(){
         triPhotographe("all");
     } else {
         triPhotographe("events");
-    };
-};
+    }
+}
 
 function tagArchitecture(){
     if(filtreTag === 'all'){
@@ -159,8 +159,8 @@ function tagArchitecture(){
         triPhotographe("all");
     } else {
         triPhotographe("architecture");
-    };
-};
+    }
+}
 
 function triPhotographe(e) {
     filtreTag = e;
@@ -168,59 +168,8 @@ function triPhotographe(e) {
     getPhotographers();
 }
 
-
-// function main() {
-//     fetch('FishEyeData.json')
-//         .then(res => res.json())
-//         .then(data => {
-//             data.photographers.forEach(photographe => {
-//                 if (typeof filtreTag !== 'undefined') {
-//                     let listeTags = photographe.tags;
-//                     dataFilter = listeTags.filter(a => a == filtreTag)
-//                     if (dataFilter.length == 0) {
-
-//                     } else {
-//                         insertionDonnees(photographe);
-//                     }
-//                 } else {
-//                     insertionDonnees(photographe);
-//                 }
-//             });
-//         })
-// }
-
-// function insertionDonnees(data) {
-//     let article = document.createElement('article');
-
-//     let photographeInfo =
-//         `
-//                 <a class="photographe lienCard" href="photographe.html?id=${data.id}" aria-label="Aller sur la page de ${data.name}
-//                  basé à ${data.city}, ${data.country} sont tarif journalier est de ${data.price} euro par jour.
-//                   Ses spécialité sont ${data.tags} et sa devise ${data.tagline}">
-//                     <figure class="photographe__figure">
-//                         <img class="photographe__img" src="public/img/Photographers ID Photos/${data.portrait}"
-//                             alt="Photographie de profil de ${data.alt}">
-//                         <figcaption class="photographe__figcaption">${data.name}</figcaption>
-//                     </figure>
-//                 <p class="photographe__localisation">${data.city}, ${data.country}</p>
-//                 <p class="photographe__catchLine">${data.tagline}</p>
-//                 <p class="photographe__tarif">${data.price}€/jour</p>
-//                 <ul class="photographe__tagList">`;
-//     data.tags.forEach(tag => {
-//         photographeInfo += `<li class="photographe__tag"><span aria-label="${tag}">#${tag}</span></li>`;
-//     });
-//     photographeInfo += `</ul></a>`;
-//     article.innerHTML = photographeInfo;
-//     listePhotographes.appendChild(article);
-// }
-
-// main();
-
-
-////test base de code 
-
+//recuperation des photographes
 async function getPhotographers() {
-    // Penser à remplacer par les données récupérées dans le json
     fetch('FishEyeData.json')
         .then(res => res.json())
         .then(data => {
@@ -228,9 +177,7 @@ async function getPhotographers() {
                 if (filtreTag !== 'all') {
                     let listeTags = photographe.tags;
                     dataFilter = listeTags.filter(filtre => filtre == filtreTag)
-                    if (dataFilter.length == 0) {
-
-                    } else {
+                    if (dataFilter.length !== 0) {
                         displayData(photographe);
                     }
                 } else {
@@ -238,18 +185,16 @@ async function getPhotographers() {
                 }
             });
         });
-};
+}
 
+//affichage des photographes
 async function displayData(photographe) {
     const photographerModel = photographerFactory(photographe);
     const userCardDOM = photographerModel.getUserCardDOM();
     listePhotographes.appendChild(userCardDOM);
-};
+}
 
 getPhotographers();
-
-
-////
 
 // détection et activation de l'élément lienContenu au scroll de la page
 const skipScroll = document.querySelector(".lienContenu")

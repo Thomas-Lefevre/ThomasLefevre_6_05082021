@@ -25,7 +25,7 @@ function photographerFactory(data) {
         photographeInfo += `</ul></a>`;
         article.innerHTML = photographeInfo;
         return (article);
-    };
+    }
 
     function getUserInfoDOM() {
         let presentationPhotographe = `

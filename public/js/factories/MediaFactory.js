@@ -10,9 +10,9 @@ function mediaFactory(data) {
                                             alt="${alt}, closeup view">`
         } else {
             media += `<video tabindex="5" controls class="photographies__img">
-                                                <source src="public/img/${photographerId}/${video}" type="video/mp4">
+                                                <source src="public/img/${photographerId}/${video}" type="video/mp4" alt="${alt}">
                                             </video>`
-        };
+        }
         media += `<div class="photographies__legende">
                                     <figcaption>${title}</figcaption>
                                     <div class="photographies__likes">
